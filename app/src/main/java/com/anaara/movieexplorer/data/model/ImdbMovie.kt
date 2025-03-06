@@ -1,8 +1,19 @@
 package com.anaara.movieexplorer.data.model
 
-data class ImdbMovie(
+data class Movie(
+    val id: String,
+    val genres: List<String>,
+    val release_date: String,
     val title: String,
-    val year: Int,
+    val tagline: String,
     val overview: String,
-    val genres: List<String>
-)
+    val url: String
+) {
+    fun getReleaseYear(): String {
+        return if (release_date.length >= 4) {
+            release_date.substring(0, 4)
+        } else {
+            "N/A"
+        }
+    }
+}
