@@ -1,7 +1,7 @@
 [versions]
 # Core
 kotlin = "2.0.21"
-androidGradlePlugin = "8.2.2"
+androidGradlePlugin = "8.8.2"
 coreKtx = "1.15.0"
 appcompat = "1.7.0"
 material = "1.12.0"
