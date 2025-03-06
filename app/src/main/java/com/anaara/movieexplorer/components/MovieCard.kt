@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
@@ -16,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,19 +44,26 @@ fun MovieCard(
             modifier = Modifier
                 .padding(16.dp)
         ) {
+            // Movie Title and Year
             Row (
-                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth().wrapContentHeight()
             ) {
-                Text(
-                    text = title,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = "($year)",
-                    fontSize = 16.sp
-                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Start
+                    )
+                }
+                Column {
+                    Text(
+                        text = "($year)",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Light,
+                        textAlign = TextAlign.End
+                    )
+                }
             }
             HorizontalDivider(
                 modifier = Modifier
@@ -62,13 +71,13 @@ fun MovieCard(
             )
             Text(
                 text = overview,
-                fontSize = 12.sp,
+                style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
             Row(modifier = Modifier.align(Alignment.End)) {
                 Text(
                     text = genres.joinToString(", "),
-                    fontSize = 8.sp
+                    style = MaterialTheme.typography.bodySmall
                 )
             }
         }
@@ -94,5 +103,16 @@ fun MovieCardPreviewDark() {
         year = 2023,
         overview = "The story of J. Robert Oppenheimer's role in the Manhattan Project that led to the development of the atomic bomb during World War II.",
         genres = listOf("Biography", "Drama", "History")
+    )
+}
+
+@Preview(name = "Long Title")
+@Composable
+fun MovieCardPreviewLongTitle() {
+    MovieCard(
+        title = "The Lord of the Rings: The Return of the King",
+        year = 2003,
+        overview = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+        genres = listOf("Action", "Adventure", "Drama")
     )
 }
