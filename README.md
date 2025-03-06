@@ -15,7 +15,7 @@ The app makes use of MVI for unidirectional data flow, which works well with Com
 
 Mock Data, demostrating titel/year layout with very long titles:
 
-![bordered width=30%](readme_assets/long_titles.png){width=50%}
+![bordered width=30%](readme_assets/long_titles.png)
 
 ## Future Features
 
