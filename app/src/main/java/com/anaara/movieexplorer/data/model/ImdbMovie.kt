@@ -1,6 +1,6 @@
 package com.anaara.movieexplorer.data.model
 
-data class Movie(
+data class ImdbMovie(
     val id: String,
     val genres: List<String>,
     val release_date: String,

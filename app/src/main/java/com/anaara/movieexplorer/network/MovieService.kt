@@ -1,6 +1,6 @@
 package com.anaara.movieexplorer.network
 
-// MovieApiService.kt
+import com.anaara.movieexplorer.data.model.ImdbMovie
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,5 +13,5 @@ interface MovieApiService {
         @Query("limit") limit: Int = 500,
         @Query("from") from: Int = 0,
         @Query("genre") genre: String? = null
-    ): List<Movie>
+    ): List<ImdbMovie>
 }

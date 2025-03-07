@@ -9,6 +9,8 @@ The project utilizes the Repository pattern, fetching data from the API in the b
 
 The app makes use of MVI for unidirectional data flow, which works well with Compose UI and Flow.
 
+Lazy loading is used to handle the large dataset effectively. 
+
 
 
 ## Screenshots
