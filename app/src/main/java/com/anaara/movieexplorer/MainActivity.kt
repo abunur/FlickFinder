@@ -67,7 +67,14 @@ fun MovieApp(viewModel: MovieViewModel = viewModel()) {
         movies = movies,
         isLoading = isLoading,
         onMovieClick = {
-            // TODO: Handle movie click
+            // Handle movie click here
+        },
+        onGenreSelected = {
+            viewModel.selectGenre(it)
+            viewModel.resetPagination()
+        },
+        onLoadMore = {
+            viewModel.loadMoreMovies()
         }
     )
 
@@ -80,6 +87,8 @@ fun MovieList(
     movies: List<ImdbMovie> = emptyList(),
     isLoading: Boolean = false,
     onMovieClick: (ImdbMovie) -> Unit = {},
+    onLoadMore: () -> Unit = {},
+    onGenreSelected: (String?) -> Unit = {}
 ) {
 
 
