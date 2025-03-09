@@ -26,7 +26,7 @@ Mock Data for Compose Preview, live data from API in-app:
 
 ## Challenges
 
-The top challenge for me was finding the time to do the exercise. Four hours might not seem like a lot of time, but after I returned from travels I was only able to put in about half that, before a long break and then putting in the rest of the time. The next biggest challenge for me was trying to complete the requirements in the alloted time. Four hours isnt' a lot of time to complete all the requirements as listed. I tend to like to take my time, coding carefully and thinking about both UI and UX from the user perspective as well as efficiency and architecture from the development perspective. 
+The top challenge for me was finding the time to do the exercise. Four hours might not seem like a lot of time, but after I returned from travels I was only able to put in about half that, before a long break and then putting in the rest of the time. The next biggest challenge for me was trying to complete the requirements in the alloted time. Four hours isnt' a lot of time to complete all the requirements as listed. I tend to like to take my time, coding carefully and thinking about both UI and UX from the user perspective as well as efficiency and architecture from the development perspective. For example, I spent time refactoring the layout to accommodate for long movie titles while still placing the movie release date in the upper right corner of the tile.
 
 ## Learnings
 
