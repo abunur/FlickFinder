@@ -20,6 +20,17 @@ Mock Data, demostrating titel/year layout with very long titles:
 
 ![bordered width=30%](readme_assets/long_titles.png)
 
+Mock Data for Compose Preview, live data from API in-app:
+![bordered width=30%](readme_assets/live_data.png)
+
+
+## Challenges
+
+The top challenge for me was finding the time to do the exercise. Four hours might not seem like a lot of time, but after I returned from travels I was only able to put in about half that, before a long break and then putting in the rest of the time. The next biggest challenge for me was trying to complete the requirements in the alloted time. Four hours isnt' a lot of time to complete all the requirements as listed. I tend to like to take my time, coding carefully and thinking about both UI and UX from the user perspective as well as efficiency and architecture from the development perspective. 
+
+## Learnings
+
+Initially I started coding the app by hand. I'm a very visual person, so I like to think about the UI, break it down into a component level and then start from coding the UI with dummy data and no network access. I created the movie tile this way. At my current day job, we are resticted from using AI and the AI integration in our IDEs have been disabled. So it had been a while since I explored leveraging the built-in as well as external AI tools available for coding, as well as the AI-assisted autocomplete in Android Studio. I got to really play with those tools during this exercise, and I was really pleasantly surprised at how far they have come. Fortuneatly I have spent time previously learning a bit of prompt engineering, so I was able to get both Gemini and Claud.ai to write code for me according to my own architectural preferences. This saved me a tremendous amount of time. I really look forward to using these tools much more in the future.
 
 ## Future Features
 
