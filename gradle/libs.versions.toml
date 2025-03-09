@@ -8,7 +8,6 @@ material = "1.12.0"
 
 # Compose
 compose-bom = "2025.02.00"
-compose-compiler = "1.5.6"
 activity-compose = "1.10.1"
 lifecycle-compose = "2.8.7"
 
@@ -99,5 +98,6 @@ lifecycle = ["lifecycle-viewmodel-ktx", "lifecycle-runtime-ktx"]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
