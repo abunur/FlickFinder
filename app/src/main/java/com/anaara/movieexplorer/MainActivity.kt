@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -65,6 +66,7 @@ fun MovieApp(viewModel: MovieViewModel = viewModel()) {
                 modifier = Modifier
                     .padding(paddingValues)
                     .fillMaxSize()
+                    .fillMaxWidth()
             ) {
                 // Genres row
                 GenreSelector(
