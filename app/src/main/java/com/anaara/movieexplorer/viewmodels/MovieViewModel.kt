@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anaara.movieexplorer.data.repository.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,6 +31,7 @@ class MovieViewModel @Inject constructor(
     private val _currentPage = MutableStateFlow(0)
 
     // Combine selected genre and current page to get movies
+    @OptIn(ExperimentalCoroutinesApi::class)
     val movies = combine(_selectedGenre, _currentPage) { genre, page ->
         Pair(genre, page)
     }.flatMapLatest { (genre, page) ->
