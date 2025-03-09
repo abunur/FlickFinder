@@ -1,13 +1,16 @@
 package com.anaara.movieexplorer.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,17 +19,19 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.unit.dp
 import com.anaara.movieexplorer.data.model.Genre
-
 
 @Composable
 fun GenreSelector(
     genres: List<Genre>,
     selectedGenre: String?,
-    onGenreSelected: (String?) -> Unit
+    onGenreSelected: (String?) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     var expanded by remember { mutableStateOf(false) }
 
@@ -35,7 +40,7 @@ fun GenreSelector(
         else -> genres.find { it.name == selectedGenre }?.let { "${it.name} (${it.count})" } ?: selectedGenre
     }
 
-    Box(modifier = Modifier.fillMaxWidth()) {
+    Box(modifier = modifier.fillMaxWidth()) {
         OutlinedButton(
             onClick = { expanded = true },
             modifier = Modifier.fillMaxWidth()
@@ -58,7 +63,11 @@ fun GenreSelector(
                 onClick = {
                     onGenreSelected(null)
                     expanded = false
-                }
+                },
+                modifier = Modifier.background(
+                    if (selectedGenre == null) MaterialTheme.colorScheme.primaryContainer
+                    else Color.Transparent
+                )
             )
             // Genres
             genres.forEach { genre ->
@@ -67,14 +76,18 @@ fun GenreSelector(
                     onClick = {
                         onGenreSelected(genre.name)
                         expanded = false
-                    }
+                    },
+                    modifier = Modifier.background(
+                        if (genre.name == selectedGenre) MaterialTheme.colorScheme.primaryContainer
+                        else Color.Transparent
+                    )
                 )
             }
         }
     }
 }
 
-// Provider
+// Preview Provider
 class GenreSelectorPreviewProvider : PreviewParameterProvider<List<Genre>> {
     override val values: Sequence<List<Genre>> = sequenceOf(
         listOf(
@@ -90,21 +103,36 @@ class GenreSelectorPreviewProvider : PreviewParameterProvider<List<Genre>> {
     )
 }
 
-// Previews
+// Previews 
 @Preview(name = "GenreSelector - All Genres", group = "GenreSelector")
 @Composable
 fun GenreSelectorPreviewAll(@PreviewParameter(GenreSelectorPreviewProvider::class) genres: List<Genre>) {
-    GenreSelector(genres = genres, selectedGenre = null, onGenreSelected = {})
+    GenreSelector(
+        genres = genres,
+        selectedGenre = null,
+        onGenreSelected = {},
+        modifier = Modifier.padding(8.dp)
+    )
 }
 
 @Preview(name = "GenreSelector - Selected Genre", group = "GenreSelector")
 @Composable
 fun GenreSelectorPreviewSelected(@PreviewParameter(GenreSelectorPreviewProvider::class) genres: List<Genre>) {
-    GenreSelector(genres = genres, selectedGenre = "Comedy", onGenreSelected = {})
+    GenreSelector(
+        genres = genres,
+        selectedGenre = "Comedy",
+        onGenreSelected = {},
+        modifier = Modifier.padding(8.dp)
+    )
 }
 
 @Preview(name = "GenreSelector - Empty Genres", group = "GenreSelector")
 @Composable
 fun GenreSelectorPreviewEmpty(@PreviewParameter(GenreSelectorPreviewProvider::class) genres: List<Genre>) {
-    GenreSelector(genres = genres, selectedGenre = null, onGenreSelected = {})
+    GenreSelector(
+        genres = genres,
+        selectedGenre = null,
+        onGenreSelected = {},
+        modifier = Modifier.padding(8.dp)
+    )
 }
