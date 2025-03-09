@@ -2,6 +2,9 @@ package com.anaara.movieexplorer.app.di
 
 import android.content.Context
 import androidx.room.Room
+import com.anaara.movieexplorer.data.database.AppDatabase
+import com.anaara.movieexplorer.data.database.GenreDao
+import com.anaara.movieexplorer.data.database.MovieDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
