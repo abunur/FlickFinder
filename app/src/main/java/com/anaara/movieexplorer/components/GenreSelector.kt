@@ -103,7 +103,7 @@ class GenreSelectorPreviewProvider : PreviewParameterProvider<List<Genre>> {
     )
 }
 
-// Previews 
+// Previews
 @Preview(name = "GenreSelector - All Genres", group = "GenreSelector")
 @Composable
 fun GenreSelectorPreviewAll(@PreviewParameter(GenreSelectorPreviewProvider::class) genres: List<Genre>) {
