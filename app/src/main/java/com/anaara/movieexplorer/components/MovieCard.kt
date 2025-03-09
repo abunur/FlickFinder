@@ -1,12 +1,11 @@
 package com.anaara.movieexplorer.components
 
 import android.content.res.Configuration
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -16,11 +15,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun MovieCard(
@@ -28,7 +27,11 @@ fun MovieCard(
     year: String = "1986",
     overview: String = "Overview",
     genres: List<String> = listOf("Genre 1", "Genre 2"),
+    url: String = "https://www.imdb.com/title/tt0110912/"
 ) {
+
+    val uriHandler = LocalUriHandler.current
+
     ElevatedCard(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant,
@@ -39,6 +42,7 @@ fun MovieCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
+            .clickable { uriHandler.openUri(url) }
     ) {
         Column(
             modifier = Modifier

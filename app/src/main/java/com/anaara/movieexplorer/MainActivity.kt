@@ -48,6 +48,7 @@ fun MovieApp(viewModel: MovieViewModel = viewModel()) {
     val movies by viewModel.movies.collectAsStateWithLifecycle(emptyList())
     val selectedGenre by viewModel.selectedGenre.collectAsStateWithLifecycle()
     val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
+
     MaterialTheme {
         Scaffold(
             topBar = {
