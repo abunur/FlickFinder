@@ -120,11 +120,6 @@ class MovieRepositoryImpl @Inject constructor(
         }
     }
 
-    // Overloaded method for backward compatibility
-    override suspend fun refreshMovies(genre: String?, offset: Int) {
-        refreshMovies(genre, offset, 500)
-    }
-
     override suspend fun getMoviesCount(genre: String?): Int {
         return movieDao.getMoviesCount(genre)
     }

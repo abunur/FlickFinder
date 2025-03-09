@@ -16,7 +16,7 @@ interface MovieRepository {
     fun getMovies(genre: String? = null, page: Int, pageSize: Int = 50): Flow<List<ImdbMovie>>
 
     // Fetch movies from API and cache them
-    suspend fun refreshMovies(genre: String? = null, offset: Int = 0)
+    suspend fun refreshMovies(genre: String? = null, offset: Int = 0, limit: Int = 500)
 
     // Get total count of movies for a genre
     suspend fun getMoviesCount(genre: String? = null): Int
