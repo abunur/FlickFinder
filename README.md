@@ -40,3 +40,7 @@ Nice to have features, which were not part of the requirement, that I would add 
 - detail view - rather than going to IMBD in the detail view, show a movie detail screen
   - enable movie thumbnail, tapping the thumbnail plays movie trailer if available
   - movie trailers might come from a separate API
+
+## Conclusion
+
+I really, really enjoyed working on this exercise. It made me much more aware of the current capabilities of AI with regard to coding, and I also really just enjoyed building this app, to the point that I think if I can find the time, I would like to continue developing it further. It also sparked my interest in leveraging AI to help me build iOS and Vision Pro apps in the future.
