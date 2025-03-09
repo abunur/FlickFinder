@@ -6,7 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,8 +19,10 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.anaara.movieexplorer.components.GenreSelector
 import com.anaara.movieexplorer.components.MovieList
 import com.anaara.movieexplorer.viewmodels.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,7 +52,7 @@ fun MovieApp(viewModel: MovieViewModel = viewModel()) {
         Scaffold(
             topBar = {
                 CenterAlignedTopAppBar(
-                    title = { Text("Movie App") },
+                    title = { Text("Movie Explorer") },
                     colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                         containerColor = MaterialTheme.colorScheme.primaryContainer,
                         titleContentColor = MaterialTheme.colorScheme.primary
@@ -61,16 +65,20 @@ fun MovieApp(viewModel: MovieViewModel = viewModel()) {
                     .padding(paddingValues)
                     .fillMaxSize()
             ) {
+                // Genres row
+                GenreSelector(
+                    genres = genres,
+                    selectedGenre = selectedGenre,
+                    onGenreSelected = { genre ->
+                        viewModel.selectGenre(genre)
+                    }
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
                 MovieList(
                     movies = movies,
                     isLoading = isLoading,
-                    onMovieClick = {
-                        // Handle movie click here
-                    },
-                    onGenreSelected = {
-                        viewModel.selectGenre(it)
-                        viewModel.resetPagination()
-                    },
                     onLoadMore = {
                         viewModel.loadMoreMovies()
                     }
