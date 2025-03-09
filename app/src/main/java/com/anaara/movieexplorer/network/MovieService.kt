@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface MovieApiService {
     @GET("api/genres")
-    suspend fun getGenres(): List<List<Genre>>
+    suspend fun getGenres(): List<List<Any>>
 
     @GET("api/movies")
     suspend fun getMovies(
