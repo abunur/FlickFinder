@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun MovieCard(
     title: String = "[Title]",
-    year: Int = 1986,
+    year: String = "1986",
     overview: String = "Overview",
     genres: List<String> = listOf("Genre 1", "Genre 2"),
 ) {
@@ -89,7 +89,7 @@ fun MovieCard(
 fun MovieCardPreviewLight() {
     MovieCard(
         title = "Oppenheimer",
-        year = 2023,
+        year = "2023",
         overview = "The story of J. Robert Oppenheimer's role in the Manhattan Project that led to the development of the atomic bomb during World War II.",
         genres = listOf("Biography", "Drama", "History")
     )
@@ -100,7 +100,7 @@ fun MovieCardPreviewLight() {
 fun MovieCardPreviewDark() {
     MovieCard(
         title = "Oppenheimer",
-        year = 2023,
+        year = "2023",
         overview = "The story of J. Robert Oppenheimer's role in the Manhattan Project that led to the development of the atomic bomb during World War II.",
         genres = listOf("Biography", "Drama", "History")
     )
@@ -111,7 +111,7 @@ fun MovieCardPreviewDark() {
 fun MovieCardPreviewLongTitle() {
     MovieCard(
         title = "The Lord of the Rings: The Return of the King",
-        year = 2003,
+        year = "2003",
         overview = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
         genres = listOf("Action", "Adventure", "Drama")
     )
