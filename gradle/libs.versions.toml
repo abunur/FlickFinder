@@ -1,7 +1,7 @@
 [versions]
 # Core
 kotlin = "2.0.21"
-androidGradlePlugin = "8.9.0-rc02"
+androidGradlePlugin = "8.9.0"
 coreKtx = "1.15.0"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -32,6 +32,16 @@ lifecycle = "2.8.7"
 junit = "4.13.2"
 androidxJunit = "1.2.1"
 espresso = "3.6.1"
+mockito-core = "5.10.0"
+mockito-inline = "5.2.0"
+mockito-kotlin = "5.2.1"
+coroutines-test = "1.7.3"
+arch-core-testing = "2.2.0"
+truth = "1.4.2"
+test-core-ktx = "1.5.0"
+room-testing = "2.6.1"
+compose-ui-test = "1.5.4"
+mockwebserver = "4.12.0"
 
 [libraries]
 # Android Core
@@ -75,6 +85,19 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito-inline" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-test" }
+arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "arch-core-testing" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "test-core-ktx" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "room-testing" }
+compose-ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose-ui-test" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose-ui-test" }
+
+mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserver" }
 
 # Gradle plugins
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
