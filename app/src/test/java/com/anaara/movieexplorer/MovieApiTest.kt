@@ -110,7 +110,7 @@ class MovieApiTest {
     @Test
     fun `getGenres returns timeout error`() = runBlocking {
         // Arrange
-        mockWebServer.shutdown() // Force a connection error
+        // Do not enqueue any responses, this will cause a timeout error
 
         // Act
         var exceptionCaught = false
@@ -127,7 +127,7 @@ class MovieApiTest {
     @Test
     fun `getMovies returns timeout error`() = runBlocking {
         // Arrange
-        mockWebServer.shutdown() // Force a connection error
+        // Do not enqueue any responses, this will cause a timeout error
 
         // Act
         var exceptionCaught = false
