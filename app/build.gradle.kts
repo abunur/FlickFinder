@@ -81,6 +81,20 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
+
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.arch.core.testing)
+    testImplementation(libs.truth)
+    testImplementation(libs.test.core.ktx)
+    testImplementation(libs.room.testing)
+    testImplementation(libs.compose.ui.test.junit)
+    debugImplementation(libs.compose.ui.test.manifest)
+
+    testImplementation(libs.mockwebserver)
+
 }
 
 // Allow references to generated code
