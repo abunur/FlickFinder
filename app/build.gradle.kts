@@ -93,6 +93,8 @@ dependencies {
     testImplementation(libs.compose.ui.test.junit)
     debugImplementation(libs.compose.ui.test.manifest)
 
+    testImplementation(libs.mockwebserver)
+
 }
 
 // Allow references to generated code

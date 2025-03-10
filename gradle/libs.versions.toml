@@ -41,6 +41,7 @@ truth = "1.4.2"
 test-core-ktx = "1.5.0"
 room-testing = "2.6.1"
 compose-ui-test = "1.5.4"
+mockwebserver = "4.12.0"
 
 [libraries]
 # Android Core
@@ -95,6 +96,8 @@ test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "test-core-kt
 room-testing = { module = "androidx.room:room-testing", version.ref = "room-testing" }
 compose-ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose-ui-test" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose-ui-test" }
+
+mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserver" }
 
 # Gradle plugins
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
