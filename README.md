@@ -1,8 +1,6 @@
 # Movie Explorer
 An IMDB Movie Browser
 
-*Coding exercise performed as Step 2 of Brilliant.org interview process.*
-
 ## Architecture
 
 The project utilizes the Repository pattern, fetching data from the API in the background, populating a local Room database. The data is provided to the UI from the local database, and the database is periodically refreshed as needed in the background. This provides a more performant user experience, as upon subsequent app interactions data is already persisted locally. The user has also been given an option to manually force a data refresh by pressing a refresh button button.
